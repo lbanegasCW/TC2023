@@ -1,16 +1,2 @@
-int main() {
-    int a;
-    int x;
-
-    while (a == 1) {
-        x = 5;
-    }
-
-    if (x == 1) {
-        int ha = 20;
-        int zi = 231;
-    }
-    else {
-        int j = 0;
-    }
-}
+probando 123 probando
+3 palabras
