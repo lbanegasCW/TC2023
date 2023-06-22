@@ -1,2 +1,19 @@
-probando 123 probando
-3 palabras
+int x = 5;
+int y = 10;
+int resultado;
+
+if (x < y) {
+    resultado = x + y;
+} else {
+    resultado = x - y;
+}
+
+int contador = 0;
+for (int i = 0; i < 5; i++) {
+    contador = contador + i;
+}
+
+contador = 0;
+while (contador < 3) {
+    contador++;
+}
