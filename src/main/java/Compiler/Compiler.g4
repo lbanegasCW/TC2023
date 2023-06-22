@@ -54,6 +54,7 @@ IF : 'if' ;
 ELSE : 'else' ;
 FOR : 'for' ;
 WHILE : 'while' ;
+RETURN : 'return' ;
 
 ID : (LETRA | '_') (LETRA | DIGITO | '_')* ;
 WS : [ \t\n\r] -> skip ;
@@ -64,6 +65,7 @@ programa : instrucciones EOF ;
 
 // Regla para una lista de instrucciones
 instrucciones : instruccion instrucciones
+              | retorno
               |
               ;
 
@@ -79,7 +81,7 @@ instruccion : asignacion
             ;
 
 // Regla para un bloque de instrucciones { ... }
-bloque : LA instrucciones LC ;
+bloque : LA instrucciones (retorno instruccion)? LC ;
 
 // Regla para una declaración de variables. int x;
 declaracion : TYPE listaId DC ; 
@@ -96,8 +98,14 @@ inicializacion : EQU expresion ;
 // Regla para una lista de identificadores. i = 2, ...
 listaId : ID inicializacion? (COM ID inicializacion?)* ;
 
-// Regla para una definición función(int x, ...) { ... }
-funcion : TYPE ID PA (declaracion)? PC bloque ;
+// Regla para una definición función(...) { ... }
+funcion : TYPE ID PA parametros? PC bloque ;
+
+// Regla para los parametros de la funcion. int x, string b
+parametros : TYPE listaId (COM TYPE listaId)* ;
+
+// Regla para devolver valores en una funcion. return x;
+retorno : RETURN expresion? DC ;
 
 // Regla para una instrucción tipo if (i<3) { ... } ... 
 iif : IF PA comparacion PC instruccion (ELSE instruccion)? ;

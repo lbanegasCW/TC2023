@@ -110,6 +110,26 @@ public interface CompilerListener extends ParseTreeListener {
 	 */
 	void exitFuncion(CompilerParser.FuncionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CompilerParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametros(CompilerParser.ParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CompilerParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametros(CompilerParser.ParametrosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CompilerParser#retorno}.
+	 * @param ctx the parse tree
+	 */
+	void enterRetorno(CompilerParser.RetornoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CompilerParser#retorno}.
+	 * @param ctx the parse tree
+	 */
+	void exitRetorno(CompilerParser.RetornoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CompilerParser#iif}.
 	 * @param ctx the parse tree
 	 */

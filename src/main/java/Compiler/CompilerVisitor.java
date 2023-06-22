@@ -73,6 +73,18 @@ public interface CompilerVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFuncion(CompilerParser.FuncionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CompilerParser#parametros}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParametros(CompilerParser.ParametrosContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CompilerParser#retorno}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRetorno(CompilerParser.RetornoContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CompilerParser#iif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

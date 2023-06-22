@@ -17,3 +17,8 @@ contador = 0;
 while (contador < 3) {
     contador++;
 }
+
+int sumar(int a, int b) {
+    int resultado = a + b;
+    return resultado;
+}
