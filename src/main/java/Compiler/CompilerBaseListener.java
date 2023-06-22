@@ -18,18 +18,6 @@ public class CompilerBaseListener implements CompilerListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeSpecifier(CompilerParser.TypeSpecifierContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTypeSpecifier(CompilerParser.TypeSpecifierContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterPrograma(CompilerParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}

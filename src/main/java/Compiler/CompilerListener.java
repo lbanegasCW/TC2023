@@ -10,16 +10,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface CompilerListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link CompilerParser#typeSpecifier}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeSpecifier(CompilerParser.TypeSpecifierContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CompilerParser#typeSpecifier}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeSpecifier(CompilerParser.TypeSpecifierContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CompilerParser#programa}.
 	 * @param ctx the parse tree
 	 */
