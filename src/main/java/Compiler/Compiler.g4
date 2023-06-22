@@ -1,4 +1,4 @@
-grammar compiladores;
+grammar Compiler;
 
 @header {
 package compiladores;

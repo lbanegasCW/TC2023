@@ -1,4 +1,4 @@
-package compiladores;
+package Compiler;
 
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.CharStream;
@@ -13,13 +13,13 @@ public class App {
         CharStream input = CharStreams.fromFileName("input/entrada.txt");
 
         // create a lexer that feeds off of input CharStream
-        compiladoresLexer lexer = new compiladoresLexer(input);
+        CompilerLexer lexer = new CompilerLexer(input);
         
         // create a buffer of tokens pulled from the lexer
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         
         // create a parser that feeds off the tokens buffer
-        compiladoresParser parser = new compiladoresParser(tokens);
+        CompilerParser parser = new CompilerParser(tokens);
                 
         // create Listener
         // ExpRegBaseListener escucha = new Escucha();
