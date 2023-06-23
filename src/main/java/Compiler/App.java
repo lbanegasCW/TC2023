@@ -21,25 +21,34 @@ public class App {
         // Create a parser that feeds off the tokens buffer
         CompilerParser parser = new CompilerParser(tokens);
                 
+        // Se genera una coleccion que sera utilizada para recopilar errores
+        ErrorCollection errorCollection = ErrorCollection.getInstance();
+        
         // Se crea el listener
-        // ExpRegBaseListener escucha = new Escucha();
+        ErrorListener errorListener = new ErrorListener(errorCollection);
 
         // Conecto el objeto con Listeners al parser
-        // parser.addParseListener(escucha);
+        parser.addErrorListener(errorListener);
 
         // Solicito al parser que comience indicando una regla gramatical
         // En este caso la regla es el simbolo inicial
         ParseTree tree =  parser.programa();
         
-        // Conectamos el visitor
-        // Caminante visitor = new Caminante();
-        // visitor.visit(tree);
-        // System.out.println(visitor);
-        // System.out.println(visitor.getErrorNodes());
-
         // Imprime el arbol obtenido
-        System.out.println("Print tree: ");
+        System.out.println();
+        System.out.println("Arbol sintáctico: ");
         System.out.println(tree.toStringTree(parser));
-        // System.out.println(escucha);
+
+
+        // Conectamos el visitor
+        System.out.println();
+        System.out.println("Tabla de Simbolos por contexto: ");
+        SymbolTableVisitor visitor = new SymbolTableVisitor(errorCollection);
+        visitor.visit(tree);
+        System.out.println(visitor);
+
+        System.out.println();
+        System.out.println("Informe de errores: ");
+        errorCollection.mostrarErrores();
     }
 }

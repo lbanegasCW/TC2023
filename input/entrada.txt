@@ -1,24 +1,35 @@
-int x = 5;
-int y = 10;
-int resultado;
+char global;
 
-if (x < y) {
-    resultado = x + y;
-} else {
-    resultado = x - y;
+int main() {
+    char global;
+    int x = 5;
+    int y = 10;
+    int resultado;
+
+    if (x < y) {
+        resultado = x + y;
+    } else {
+        resultado = x - y;
+    }
+
+    int contador = 0;
+    for (int i = 0; i < 5; i++) {
+        contador = contador + i;
+    }
+
+    contador = 0;
+    while (contador < 3) {
+        contador++;
+    }
+
+    o = 1;
+
+    int sumar(int a, int b) {
+        int resultFuncion = a + b;
+        return resultFuncion;
+    }
+
+    a = global;
 }
 
-int contador = 0;
-for (int i = 0; i < 5; i++) {
-    contador = contador + i;
-}
-
-contador = 0;
-while (contador < 3) {
-    contador++;
-}
-
-int sumar(int a, int b) {
-    int resultado = a + b;
-    return resultado;
-}
+contador contador
